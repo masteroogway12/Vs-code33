@@ -1,0 +1,57 @@
+import java.awt.*;
+
+public class Main {
+
+
+
+    public static void main (String[]args ){
+
+        DrawingPanel panel = new DrawingPanel(200, 200);
+        Graphics g = panel.getGraphics();
+        drawEyes( g, Color.gray, 0, 0);
+        drawPyramid(g, Color.white, 50, 0);
+        drawJava(g, Color.white, 100, 0);
+        g.drawRect(0,50,50,50);
+        drawPyramid(g, Color.BLACK, 0, 50);
+        drawEyes(g, Color.gray, 100,50);
+
+    }
+
+
+
+
+
+        public static void drawEyes( Graphics g, Color c, int x, int y){
+
+             g.drawRect(0,0,50,50);
+
+             g.setColor(Color.gray);
+             g.drawOval(x+4,y+3,15,38);
+             g.drawOval(x+25,y+3,15,38);
+             g.fillOval(x+7,y+25,10,15);
+             g.fillOval(x+28,y+25,10,15);
+
+
+
+        }
+
+        public static void drawPyramid(Graphics g, Color v, int x, int y){
+
+            g.drawRect(50,0,50,50);
+            g.drawRect(x,y, 40,8);
+            g.drawRect(x,y, 33, 7);
+            g.drawRect(x,y, 28, 5);
+            g.drawRect(x,y, 24, 5);
+        }
+        public static void drawJava(Graphics g, Color b, int x, int y){
+            g.drawRect(100,0,50,50);
+            g.drawString("I", x,y);
+            g.drawString("Love", x,y);
+            g.drawString("Java", x,y);
+
+        }
+
+        
+
+
+}
